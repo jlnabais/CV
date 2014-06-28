@@ -11,7 +11,6 @@
 \documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
-
 \addbibresource{bibliography.bib} % Specify the bibliography file to include publications
 
 \begin{document}
@@ -30,13 +29,9 @@
 \vspace{-5mm} \textbf{Birth}: August 7, 1987
 \includegraphics[scale=0.5, left]{flag.png}
 \vspace{-5mm} \textbf{Citizenship}: Portuguese
-\section{contacts}
 \includegraphics[scale=0.5, left]{location.png} 
-\vspace{-5mm} Rua Francisco Stromp Bloco A Lote B-4 RC
- 1600-464 Lisboa
-Lisboa
-Portugal
-~
+\vspace{-5mm} \textbf{Lives in}: Lisboa, Portugal
+\section{contacts}
 \includegraphics[scale=0.5, left]{phone.png} 
 \vspace{-5mm} +351 918865622
 \includegraphics[scale=0.5, left]{envelope.png}
@@ -133,6 +128,19 @@ Development of a Service Portfolio Management System re-using semantic web techn
 %------------------------------------------------
 \end{entrylist}
 
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Publications}
+
+\begin{refsection} % This is a custom heading for those references marked as "inproceedings" but not containing "keyword=france"
+\nocite{*}
+\printbibliography[sorting=chronological, type=inproceedings, title={international peer-reviewed conferences/proceedings}, notkeyword={france}, heading=subbibliography]
+\end{refsection}
+
+%----------------------------------------------------------------------------------------
+
 \vfill\eject
 
 %----------------------------------------------------------------------------------------
@@ -174,4 +182,5 @@ Development of a Service Portfolio Management System re-using semantic web techn
 {\emph{Co-organizer of a public event for child obesity awareness}}
 %------------------------------------------------
 \end{entrylist}
+
 \end{document}
