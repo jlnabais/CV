@@ -52,12 +52,14 @@
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
-\newfontfamily\bodyfont[]{Helvetica Neue}
-\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+
+\newfontfamily\bodyfont[]{Roboto-Regular}
+\newfontfamily\thinfont[]{Roboto-Thin}
+\newfontfamily\headingfont[]{Roboto-Medium}
+\newfontfamily\positionfont[]{Roboto-LightItalic}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+\setmainfont[Mapping=tex-text, Color=textcolor]{Roboto-Light}
 
 %\setmathfont{XITS Math}
 
@@ -315,11 +317,15 @@
 }
 
 \DeclareNameFormat{author}{%
-  \small\addfontfeature{Color=lightgray}%
-  \ifblank{#3}{}{#3\space}#1%
-  \ifthenelse{\value{listcount}<\value{liststop}}
-    {\addcomma\space}
-    {}%
+	\renewcommand*{\multinamedelim}{\addsemicolon\addspace}%
+	\nameparts{#1}%
+	\usebibmacro{name:default}
+	{\namepartgiven}
+	{\namepartfamily}
+	{\namepartprefix}
+	{\namepartsuffix}%
+	\usebibmacro{name:andothers}%
+	\small\addfontfeature{Color=lightgray}%
 }
 
 \newcommand{\printbibsection}[2]{
